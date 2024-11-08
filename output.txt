@@ -1,0 +1,67 @@
+Car 0 from 1 arrived at time 0
+Car 0 from 1 parked. (Parking Status: 1 spots occupied)
+Car 1 from 1 arrived at time 1
+Car 1 from 1 parked. (Parking Status: 2 spots occupied)
+Car 2 from 1 arrived at time 2
+Car 2 from 1 parked. (Parking Status: 3 spots occupied)
+Car 10 from 3 arrived at time 2
+Car 10 from 3 parked. (Parking Status: 4 spots occupied)
+Car 3 from 1 arrived at time 3
+Car 5 from 2 arrived at time 3
+Car 3 from 1 waiting for a spot.
+Car 5 from 2 waiting for a spot.
+Car 0 from 1 left after 3 units of time. (Parking Status: 3 spots occupied)
+Car 2 from 1 left after 2 units of time. (Parking Status: 2 spots occupied)
+Car 4 from 1 arrived at time 4
+Car 4 from 1 parked. (Parking Status: 3 spots occupied)
+Car 3 from 1 parked. (Parking Status: 4 spots occupied)
+Car 5 from 2 waiting for a spot.
+Car 1 from 1 left after 4 units of time. (Parking Status: 3 spots occupied)
+Car 5 from 2 parked. (Parking Status: 4 spots occupied)
+Car 11 from 3 arrived at time 5
+Car 11 from 3 waiting for a spot.
+Car 6 from 2 arrived at time 6
+Car 6 from 2 waiting for a spot.
+Car 10 from 3 left after 4 units of time. (Parking Status: 3 spots occupied)
+Car 11 from 3 parked. (Parking Status: 4 spots occupied)
+Car 4 from 1 left after 3 units of time. (Parking Status: 3 spots occupied)
+Car 6 from 2 parked. (Parking Status: 4 spots occupied)
+Car 7 from 2 arrived at time 7
+Car 7 from 2 waiting for a spot.
+Car 12 from 3 arrived at time 7
+Car 12 from 3 waiting for a spot.
+Car 8 from 2 arrived at time 8
+Car 7 from 2 waiting for a spot.
+Car 8 from 2 waiting for a spot.
+Car 12 from 3 waiting for a spot.
+Car 9 from 2 arrived at time 9
+Car 7 from 2 waiting for a spot.
+Car 8 from 2 waiting for a spot.
+Car 9 from 2 waiting for a spot.
+Car 3 from 1 left after 5 units of time. (Parking Status: 3 spots occupied)
+Car 5 from 2 left after 4 units of time. (Parking Status: 2 spots occupied)
+Car 11 from 3 left after 3 units of time. (Parking Status: 1 spots occupied)
+Car 12 from 3 parked. (Parking Status: 2 spots occupied)
+Car 6 from 2 left after 3 units of time. (Parking Status: 1 spots occupied)
+Car 7 from 2 parked. (Parking Status: 2 spots occupied)
+Car 8 from 2 parked. (Parking Status: 3 spots occupied)
+Car 9 from 2 parked. (Parking Status: 4 spots occupied)
+Car 13 from 3 arrived at time 10
+Car 13 from 3 waiting for a spot.
+Car 12 from 3 left after 2 units of time. (Parking Status: 3 spots occupied)
+Car 13 from 3 parked. (Parking Status: 4 spots occupied)
+Car 14 from 3 arrived at time 11
+Car 14 from 3 waiting for a spot.
+Car 7 from 2 left after 2 units of time. (Parking Status: 3 spots occupied)
+Car 14 from 3 parked. (Parking Status: 4 spots occupied)
+Car 9 from 2 left after 3 units of time. (Parking Status: 3 spots occupied)
+Car 8 from 2 left after 5 units of time. (Parking Status: 2 spots occupied)
+Car 14 from 3 left after 3 units of time. (Parking Status: 1 spots occupied)
+Car 13 from 3 left after 5 units of time. (Parking Status: 0 spots occupied)
+
+Total Cars Served: 15
+Current Cars in Parking: 0
+Details:
+-Gate1: 5
+-Gate2: 5
+-Gate3: 5

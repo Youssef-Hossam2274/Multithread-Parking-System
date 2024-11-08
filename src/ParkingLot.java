@@ -3,37 +3,45 @@ import java.util.concurrent.Semaphore;
 
 
 class ParkingLot {
-    private final Semaphore parkingSpots;
+    private final Semaphore _parkingSpots;
     private int carsParked = 0;
     private int totalCarsServed = 0;
-    public final PrintWriter writer;
+    private int[] _GateCounter;
+    private int _spots;
+    public final PrintWriter _writer;
 
-    public ParkingLot(int spots, PrintWriter writer) {
-        this.parkingSpots = new Semaphore(spots, true);
-        this.writer = writer;
+    public ParkingLot(int NumberOfGates , int spots, PrintWriter writer) {
+        _parkingSpots = new Semaphore(spots, true);
+        _spots = spots;
+        _writer = writer;
+        _GateCounter = new int[NumberOfGates + 1];
+    }
+
+    public void newVisitor(int gateNumber){
+        _GateCounter[gateNumber]++;
     }
 
     public synchronized boolean tryPark(Car car) throws InterruptedException {
-        if (parkingSpots.tryAcquire()) {
+        if (_parkingSpots.tryAcquire()) {
             carsParked++;
             totalCarsServed++;
-            writer.println("Car " + car.getId() + " from " + car.getGate() +
+            _writer.println("Car " + car.getId() + " from " + car.getGate() +
                     " parked. (Parking Status: " + carsParked + " spots occupied)");
-            writer.flush();
+            _writer.flush();
             return true;
         } else {
-            writer.println("Car " + car.getId() + " from " + car.getGate() + " waiting for a spot.");
-            writer.flush();
+            _writer.println("Car " + car.getId() + " from " + car.getGate() + " waiting for a spot.");
+            _writer.flush();
             return false;
         }
     }
 
     public synchronized void leave(Car car) {
-        parkingSpots.release();
+        _parkingSpots.release();
         carsParked--;
-        writer.println("Car " + car.getId() + " from " + car.getGate() +
+        _writer.println("Car " + car.getId() + " from " + car.getGate() +
                 " left after " + car.getParkingDuration() + " units of time. (Parking Status: " + carsParked + " spots occupied)");
-        writer.flush();
+        _writer.flush();
     }
 
     public int getTotalCarsServed() {
@@ -42,5 +50,8 @@ class ParkingLot {
 
     public int getOccupiedSpots(){
         return carsParked;
+    }
+    public int[] GetGateStats(){
+        return _GateCounter;
     }
 }
