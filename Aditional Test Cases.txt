@@ -1,0 +1,130 @@
+------------------------ Test Case 1 -------------------------------
+input:
+
+Gate 1, Car 0, Arrive 0, Parks 3
+Gate 1, Car 1, Arrive 2, Parks 2
+Gate 2, Car 2, Arrive 4, Parks 3
+Gate 3, Car 3, Arrive 6, Parks 1
+
+output:
+
+Car 0 from 1 arrived at time 0
+Car 0 from 1 parked. (Parking Status: 1 spots occupied)
+Car 1 from 1 arrived at time 2
+Car 1 from 1 parked. (Parking Status: 2 spots occupied)
+Car 0 from 1 left after 3 units of time. (Parking Status: 1 spots occupied)
+Car 2 from 2 arrived at time 4
+Car 2 from 2 parked. (Parking Status: 2 spots occupied)
+Car 1 from 1 left after 2 units of time. (Parking Status: 1 spots occupied)
+Car 3 from 3 arrived at time 6
+Car 3 from 3 parked. (Parking Status: 2 spots occupied)
+Car 2 from 2 left after 3 units of time. (Parking Status: 1 spots occupied)
+Car 3 from 3 left after 1 units of time. (Parking Status: 0 spots occupied)
+
+Total Cars Served: 4
+Current Cars in Parking: 0
+Details:
+-Gate 1: 2
+-Gate 2: 1
+-Gate 3: 1
+
+
+--------------------------------------------------------------------
+
+------------------------ Test Case 2 -------------------------------
+input:
+Gate 1, Car 0, Arrive 0, Parks 4
+Gate 1, Car 1, Arrive 1, Parks 5
+Gate 2, Car 2, Arrive 2, Parks 3
+Gate 3, Car 3, Arrive 3, Parks 2
+Gate 2, Car 4, Arrive 4, Parks 4
+Gate 3, Car 5, Arrive 5, Parks 2
+
+output:
+Car 0 from 1 arrived at time 0
+Car 0 from 1 parked. (Parking Status: 1 spots occupied)
+Car 1 from 1 arrived at time 1
+Car 1 from 1 parked. (Parking Status: 2 spots occupied)
+Car 2 from 2 arrived at time 2
+Car 2 from 2 parked. (Parking Status: 3 spots occupied)
+Car 3 from 3 arrived at time 3
+Car 3 from 3 parked. (Parking Status: 4 spots occupied)
+Car 4 from 2 arrived at time 4
+Car 4 from 2 waiting for a spot.
+Car 0 from 1 left after 4 units of time. (Parking Status: 3 spots occupied)
+Car 5 from 3 arrived at time 5
+Car 5 from 3 parked. (Parking Status: 4 spots occupied)
+Car 4 from 2 waiting for a spot.
+Car 2 from 2 left after 3 units of time. (Parking Status: 3 spots occupied)
+Car 3 from 3 left after 2 units of time. (Parking Status: 2 spots occupied)
+Car 1 from 1 left after 5 units of time. (Parking Status: 1 spots occupied)
+Car 4 from 2 parked. (Parking Status: 2 spots occupied)
+Car 5 from 3 left after 2 units of time. (Parking Status: 1 spots occupied)
+Car 4 from 2 left after 4 units of time. (Parking Status: 0 spots occupied)
+
+Total Cars Served: 6
+Current Cars in Parking: 0
+Details:
+-Gate 1: 2
+-Gate 2: 2
+-Gate 3: 2
+
+Expected:
+Car 0 from 1 arrived at time 0
+Car 0 from 1 parked. (Parking Status: 1 spots occupied)
+Car 1 from 1 arrived at time 1
+Car 1 from 1 parked. (Parking Status: 2 spots occupied)
+Car 2 from 2 arrived at time 2
+Car 2 from 2 parked. (Parking Status: 3 spots occupied)
+Car 3 from 3 arrived at time 3
+Car 3 from 3 parked. (Parking Status: 4 spots occupied)
+Car 0 from 1 left after 4 units of time. (Parking Status: 3 spots occupied)    =>start of the problem
+Car 4 from 2 arrived at time 4
+Car 4 from 2 parked. (Parking Status: 4 spots occupied)
+Car 5 from 3 arrived at time 5
+Car 5 from 3 waiting for a spot.
+
+and so on
+
+Total Cars Served: 6
+Current Cars in Parking: 0
+Details:
+-Gate 1: 2
+-Gate 2: 2
+-Gate 3: 2
+
+
+--------------------------------------------------------------------
+
+------------------------ Test Case 3 -------------------------------
+input:
+Gate 1, Car 0, Arrive 0, Parks 2
+Gate 2, Car 1, Arrive 0, Parks 3
+Gate 3, Car 2, Arrive 0, Parks 4
+Gate 1, Car 3, Arrive 1, Parks 3
+
+
+output:
+Car 2 from 3 arrived at time 0
+Car 0 from 1 arrived at time 0
+Car 1 from 2 arrived at time 0
+Car 0 from 1 parked. (Parking Status: 3 spots occupied)
+Car 1 from 2 parked. (Parking Status: 2 spots occupied)
+Car 2 from 3 parked. (Parking Status: 1 spots occupied)
+Car 3 from 1 arrived at time 1
+Car 3 from 1 parked. (Parking Status: 4 spots occupied)
+Car 0 from 1 left after 2 units of time. (Parking Status: 3 spots occupied)
+Car 1 from 2 left after 3 units of time. (Parking Status: 2 spots occupied)
+Car 2 from 3 left after 4 units of time. (Parking Status: 1 spots occupied)
+Car 3 from 1 left after 3 units of time. (Parking Status: 0 spots occupied)
+
+Total Cars Served: 4
+Current Cars in Parking: 0
+Details:
+-Gate 1: 2
+-Gate 2: 1
+-Gate 3: 1
+
+
+
+--------------------------------------------------------------------
