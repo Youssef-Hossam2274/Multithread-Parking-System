@@ -47,7 +47,7 @@ class Car implements Runnable {
         try {
             // Simulate car arrival
             TimeUnit.SECONDS.sleep(arrivalTime);
-            parkingLot.writer.println("Car " + id + " from " + gate + " arrived at time " + arrivalTime);
+            parkingLot.writer.println("Car " + id + " from Gate " + gate + " arrived at time " + arrivalTime);
             parkingLot.writer.flush();
             // Try to park the car
             while (!parkingLot.tryPark(this)) {
