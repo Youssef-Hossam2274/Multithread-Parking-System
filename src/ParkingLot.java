@@ -17,29 +17,29 @@ class ParkingLot {
         if (parkingSpots.tryAcquire()) {
             carsParked++;
             totalCarsServed++;
-            writer.println("Car " + car.getId() + " from " + car.getGate() +
-                    " parked. (Parking Status: " + carsParked + " spots occupied)");
+            writer.println("Car " + car.getId() + " from Gate " + car.getGate() +
+                    " parked " + (car.getCarIsWaitedBefore() ? ("after waiting for " + car.getWaitingTime() + " units of time") : "") + ". (Parking Status: " + carsParked + " spots occupied)");
             writer.flush();
             return true;
         } else {
-            writer.println("Car " + car.getId() + " from " + car.getGate() + " waiting for a spot.");
-            writer.flush();
+            if(!car.getCarIsWaitedBefore()){
+                car.setCarIsCarWaitedBefore(true); // mark car that wait for a certain time
+                writer.println("Car " + car.getId() + " from Gate " + car.getGate() + " waiting for a spot.");
+                writer.flush();
+            }
             return false;
         }
     }
-
     public synchronized void leave(Car car) {
         parkingSpots.release();
         carsParked--;
-        writer.println("Car " + car.getId() + " from " + car.getGate() +
+        writer.println("Car " + car.getId() + " from Gate " + car.getGate() +
                 " left after " + car.getParkingDuration() + " units of time. (Parking Status: " + carsParked + " spots occupied)");
         writer.flush();
     }
-
     public int getTotalCarsServed() {
         return totalCarsServed;
     }
-
     public int getOccupiedSpots(){
         return carsParked;
     }
