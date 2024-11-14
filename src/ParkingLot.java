@@ -33,7 +33,7 @@ class ParkingLot {
     public synchronized void leave(Car car) {
         parkingSpots.release();
         carsParked--;
-        writer.println("Car " + car.getId() + " from " + car.getGate() +
+        writer.println("Car " + car.getId() + " from Gate " + car.getGate() +
                 " left after " + car.getParkingDuration() + " units of time. (Parking Status: " + carsParked + " spots occupied)");
         writer.flush();
     }
